@@ -4,16 +4,16 @@
 #include<iostream>
 #include<cmath>
 using namespace std;
-class rectangule{
+class cartision{
     int x;
     int y;
     public:
-    rectangule(){
+    cartision(){
         x-0;
         y=0;
     }
-    rectangule(int a, int b){x=a;y=b;}
-    ~rectangule(){}
+    cartision(int a, int b){x=a;y=b;}
+    ~cartision(){}
     void setdata(){
         cout<<"\nEnter value of x :";
         cin>>x;
@@ -37,7 +37,7 @@ class polar{
         r=0;
         t=0;
     }
-    polar(rectangule& a){
+    polar(cartision& a){
         int x=a.getx();
         int y=a.gety();
         r=x*x + y*y;
@@ -52,7 +52,7 @@ class polar{
 
 };
 int main(){
-    rectangule a;
+    cartision a;
     a.setdata();
     polar b=a;
     b.showdata();

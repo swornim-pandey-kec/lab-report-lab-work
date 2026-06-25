@@ -55,7 +55,6 @@ class polar{
         int x=p.x;
         int y=p.y;
         r=sqrt(x*x+y*y);
-
         theta=atan2(y,x);
     }
     void showdata(){
