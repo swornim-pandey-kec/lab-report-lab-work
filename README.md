@@ -1,33 +1,42 @@
-# 2nd Semester: Object-Oriented Programming (OOP) Lab Work
+# Object-Oriented Programming (OOP) — Tutorials & Lab Reports
 
-Welcome to my repository for the **Object-Oriented Programming (OOP)** course and lab work during my 2nd semester. This repository serves as a centralized archive of the first 5 core labs implemented during the semester.
+Welcome to my repository for the **Object-Oriented Programming (C++)** course during the 2nd semester at **Kantipur Engineering College (KEC)**. This repository serves two purposes: it houses structured **tutorials/concept guides** to master OOP fundamentals and acts as an archive for my official **class lab reports** (Labs 1 to 5) under the IOE (Tribhuvan University) curriculum.
 
-## 🚀 Course Overview
-Object-Oriented Programming is a paradigm centered around "objects" rather than "actions." This course focuses on mastering the foundational pillars of OOP using **[Insert Language, e.g., C++ / Java]**.
+---
 
-### Core Concepts Covered (Labs 1-5):
-* **Encapsulation:** Binding data and methods together into a single unit (Classes & Objects).
-* **Data Hiding:** Utilizing access specifiers to protect sensitive data.
-* **Object Lifecycle:** Managing memory using Constructors and Destructors.
-* **Polymorphism (Compile-time):** Implementing Operator Overloading and Function Overloading.
-* **Inheritance:** Establishing parent-child class relationships for maximum code reusability.
+## 🚀 Repository Highlights
+
+Unlike standard code dumps, this repository splits your learning path into two core sections:
+1. **📚 Tutorials & Concept Guides:** Quick references, notes, and foundational implementation examples to grasp *why* and *how* C++ handles objects.
+2. **📝 Class Lab Reports:** Structured, ready-to-verify solutions mapping to our weekly lab sheets, documenting program objectives, source code, and outputs.
+
+### Core Paradigms Covered (Labs 1–5):
+* **Encapsulation & Abstraction:** Wrapping data attributes and methods tightly inside classes, enforcing access controls using `public`, `private`, and `protected`.
+* **Friend Functions & Classes:** Safely bypassing traditional data-hiding boundaries when high coupling is required.
+* **Object Lifecycle Management:** Tracking allocation and garbage collection via Default, Parameterized, and Copy Constructors, and Destructors.
+* **Polymorphism (Compile-Time):** Teaching custom data classes to interact natively using overloaded operators (arithmetic, relational, and stream I/O).
+* **Inheritance:** Architecting scalable code hierarchies via Single, Multiple, and Hierarchical inheritance models.
 
 ---
 
 ## 📂 Repository Structure
 
-The repository is organized into the 5 core lab sessions:
+The code, tutorials, and reports are structured consistently by lab sequence:
 
 ```text
-├── Lab-01/               # Classes and Objects Basic
-│   ├── program1.cpp      # Creating basic classes and defining member functions
-│   └── README.md         # Lab 1 problem statements
-├── Lab-02/               # Access Specifiers & Data Hiding
-│   └── data_hiding.cpp   # Implementation of public, private, and protected members
+├── Lab-01/               # Introduction to C++ and Object Basics
+│   ├── Tutorials/        # Step-by-step guides on basic IO, streams (cin/cout)
+│   ├── Class-Reports/    # Problem statements, source codes, and outputs
+│   └── README.md         
+├── Lab-02/               # Access Specifiers & Friend Mechanisms
+│   ├── Tutorials/        # Understanding scope resolution and friend permissions
+│   └── Class-Reports/    # Lab exercises demonstrating secure data bridging
 ├── Lab-03/               # Constructors and Destructors
-│   ├── default_copy.cpp  # Default, Parameterized, and Copy constructors
-│   └── destructor.cpp    # Resource deallocation and memory cleanup
+│   ├── Tutorials/        # Deep vs Shallow copy explanations and memory tracing
+│   └── Class-Reports/    # Implementations utilizing 'new' and 'delete'
 ├── Lab-04/               # Operator Overloading
-│   └── overload.cpp      # Overloading standard operators (e.g., +, -, ==)
-└── Lab-05/               # Inheritance
-    └── inheritance.cpp   # Implementing Single, Multiple, or Hierarchical inheritance
+│   ├── Tutorials/        # Syntax rules for member vs non-member overloading
+│   └── Class-Reports/    # Complex numbers and custom matrix operator implementations
+└── Lab-05/               # Inheritance Frameworks
+    ├── Tutorials/        # Visualizing base and derived object creation sequence
+    └── Class-Reports/    # Multi-level, Multiple, and Hierarchical models
