@@ -1,6 +1,7 @@
 #include<iostream>
+#include<string>
 using namespace std;
-enum position-in-space{
+enum positioninspace{
     top,
     bottom,
     left,
@@ -18,7 +19,7 @@ enum position-in-space{
 
 };
 // arrar order must match the enum order
-const string position-in-space-names[] = {
+const string positioninspacenames[] = {
     "top",
     "bottom",
     "left",
@@ -36,13 +37,13 @@ const string position-in-space-names[] = {
 };
 
 int main() {
-    position-in-space pos = top;
-    cout << "Position: " << position-in-space-names[pos] << endl;
+     positioninspace pos = top;
+     cout << "Position: " << positioninspacenames[pos] << endl;
 
     pos = eastnorth;
-    cout << "Position: " << position-in-space-names[pos] << endl;
+     cout << "Position: " << positioninspacenames[pos] << endl;
     for (int i = 0; i < 14; ++i) {
-        cout << "Position: " << position-in-space-names[i] << endl;
+        cout << "Position: " << positioninspacenames[i] << endl;
     }
 
     return 0;
