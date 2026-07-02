@@ -15,8 +15,8 @@ class dog:public animal{
     }
 };
 int main(){
-    animal *a=new animal:
-    a->show():
+    animal *a=new animal;
+    a->show();
     a=new dog;
     a->show();
     return 0;
