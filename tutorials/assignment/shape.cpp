@@ -16,10 +16,10 @@ public:
 // Derived class Circle
 class Circle : public Set {
 public:
-    void draw() override {
+    virtual void draw(){
         cout << "Circle is drawn" << endl;
     }
-    void clope() {
+    void close() {
         cout << "Circle drawn" << endl;
     }
     ~Circle() {
@@ -30,10 +30,10 @@ public:
 // Derived class Rectangle
 class Rectangle : public Set {
 public:
-    void draw() override {
+    virtual void draw() {
         cout << "Rectangle is drawn" << endl;
     }
-    void clope() {
+    void close() {
         cout << "Rectangle drawn" << endl;
     }
     ~Rectangle() {
@@ -44,10 +44,10 @@ public:
 // Derived class Square
 class Square : public Set {
 public:
-    void draw() override {
+    virtual void draw(){
         cout << "Square is drawn" << endl;
     }
-    void clope() {
+    void close() {
         cout << "Square drawn" << endl;
     }
     ~Square() {
@@ -56,19 +56,19 @@ public:
 };
 
 int main() {
-    // Base class pointer
+
     Set* s;
 
     s = new Circle();
-    s->draw();   // Calls Circle's draw()
-    delete s;    // Properly calls Circle destructor then Set destructor
+    s->draw();   
+    delete s;    
 
     s = new Rectangle();
-    s->draw();   // Calls Rectangle's draw()
+    s->draw();   
     delete s;
 
     s = new Square();
-    s->draw();   // Calls Square's draw()
+    s->draw(); 
     delete s;
 
     return 0;
