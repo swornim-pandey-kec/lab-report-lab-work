@@ -58,7 +58,7 @@ private:
 
 public:
     Batsman(string n, int a, int m, int r, int c) : cricketer(n, a, m), runs(r) {
-        this->centuries=r/100;
+        this->centuries=static_cast<int>(r/100);
     }
 
     ~Batsman() {
