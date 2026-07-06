@@ -1,98 +1,99 @@
+// class player contain member variable name age and no of matchPlayed from this derive 2 class boller and batsman
+// boller has no of wicket as a member variable and batsman has  member variable of no of run and centuries
+//  use appropritae member functiona s member fun to rperesent the respective data
 #include <iostream>
 #include <string>
 using namespace std;
 
-// Base class
-class CricketPlayer {
+// Base class (Abstract)
+class cricketer {
 protected:
     string name;
     int age;
     int matchesPlayed;
 
 public:
-    // Constructor
-    CricketPlayer(string n, int a, int m) {
+    cricketer(string n, int a, int m) {
         name = n;
         age = a;
         matchesPlayed = m;
         cout << "CricketPlayer constructor called for " << name << endl;
     }
 
-    // Destructor
-    ~CricketPlayer() {
+
+    virtual ~cricketer() {
         cout << "CricketPlayer destructor called for " << name << endl;
     }
-
-    void displayPlayerInfo() {
-        cout << "Name: " << name << endl;
-        cout << "Age: " << age << endl;
-        cout << "Matches Played: " << matchesPlayed << endl;
-    }
+    virtual void show()= 0;
 };
 
 // Derived class for Bowler
-class Bowler : public CricketPlayer {
+class Bowler : public cricketer {
 private:
     int wickets;
 
 public:
-    // Constructor
-    Bowler(string n, int a, int m, int w) : CricketPlayer(n, a, m) {
-        wickets = w;
-        cout << "Bowler constructor called for " << n << endl;
+    Bowler(string n, int a, int m, int w) : cricketer(n, a, m), wickets(w) {
     }
 
-    // Destructor
     ~Bowler() {
-        cout << "Bowler destructor called for " << name << endl;
+        cout << "\n\nBowler destructor called for " << name << endl;
     }
 
-    void displayBowlerInfo() {
-        displayPlayerInfo();
-        cout << "Wickets Taken: " << wickets << endl;
+    
+    void show(){
+        cout << "\n\nBowler Information:" << endl;
+        cout << "Name: " << name << endl;
+        cout << "Age: " << age << endl;
+        cout << "Matches Played: " << matchesPlayed << endl;
+        cout << "Wickets Taken:" << wickets<<"\n\n " << endl;
     }
 };
 
-// Derived class for Batsman
-class Batsman : public CricketPlayer {
+
+class Batsman : public cricketer {
 private:
     int runs;
     int centuries;
 
 public:
-    // Constructor
-    Batsman(string n, int a, int m, int r, int c) : CricketPlayer(n, a, m) {
-        runs = r;
-        centuries = c;
-        cout << "Batsman constructor called for " << n << endl;
+    Batsman(string n, int a, int m, int r, int c) : cricketer(n, a, m), runs(r) {
+        this->centuries=r/100;
     }
 
-    // Destructor
     ~Batsman() {
-        cout << "Batsman destructor called for " << name << endl;
+        cout << "\n\nBatsman destructor called for " << name << endl;
     }
 
-    void displayBatsmanInfo() {
-        displayPlayerInfo();
+    void show()  {
+        cout << "\n\nBatsman Information:" << endl;
+        cout << "Name: " << name << endl;
+
+        cout << "Age: " << age << endl;
+        cout << "Matches Played: " << matchesPlayed << endl;
         cout << "Runs Scored: " << runs << endl;
-        cout << "Centuries: " << centuries << endl;
+        cout << "Centuries: " << centuries<<"\n\n "<< endl;
     }
 };
 
 // Main function
 int main() {
-    cout << "Creating Bowler object...\n";
-    Bowler bowler("Shane Warne", 32, 145, 708);
+    
+   cricketer* bowler = new Bowler("Shane Warne", 32, 145, 708);
 
-    cout << "\nCreating Batsman object...\n";
-    Batsman batsman("Sachin Tendulkar", 30, 200, 15921, 51);
+    
+    cricketer* batsman = new Batsman("Sachin Tendulkar", 30, 200, 15921, 51);
 
-    cout << "\nBowler Information:" << endl;
-    bowler.displayBowlerInfo();
+  
+   bowler->show();  
+    batsman->show(); 
 
-    cout << "\nBatsman Information:" << endl;
-    batsman.displayBatsmanInfo();
+   
 
-    cout << "\nEnd of main function, destructors will be called automatically.\n";
+    delete bowler;
+    delete batsman;
+
     return 0;
 }
+
+
