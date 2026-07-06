@@ -1,0 +1,223 @@
+// classs cricate player contain member variable name age and no of mTCH PLied from this derive 2 lasssclass blaer and batsman
+// blaer has no of wiket as a member variable and batsman has  memberr variable of  no of run and centuries
+//  use appropritae member functiona s member fun to rperesent the respective data
+
+ // // #include <iostream>
+// // #include <string>
+// // using namespace std;
+
+// // // Base class
+// // class CricketPlayer {
+// // protected:
+// //     string name;
+// //     int age;
+// //     int matchesPlayed;
+
+// // public:
+// //     // Constructor
+// //     CricketPlayer(string n, int a, int m) {
+// //         name = n;
+// //         age = a;
+// //         matchesPlayed = m;
+// //         cout << "CricketPlayer constructor called for " << name << endl;
+// //     }
+
+// //     // Destructor
+// //     ~CricketPlayer() {
+// //         cout << "CricketPlayer destructor called for " << name << endl;
+// //     }
+
+// //     void displayPlayerInfo() {
+// //         cout << "Name: " << name << endl;
+// //         cout << "Age: " << age << endl;
+// //         cout << "Matches Played: " << matchesPlayed << endl;
+// //     }
+// // };
+
+// // // Derived class for Bowler
+// // class Bowler : public CricketPlayer {
+// // private:
+// //     int wickets;
+
+// // public:
+// //     // Constructor
+// //     Bowler(string n, int a, int m, int w) : CricketPlayer(n, a, m) {
+// //         wickets = w;
+// //         cout << "Bowler constructor called for " << n << endl;
+// //     }
+
+// //     // Destructor
+// //     ~Bowler() {
+// //         cout << "Bowler destructor called for " << name << endl;
+// //     }
+
+// //     void displayBowlerInfo() {
+// //         displayPlayerInfo();
+// //         cout << "Wickets Taken: " << wickets << endl;
+// //     }
+// // };
+
+// // // Derived class for Batsman
+// // class Batsman : public CricketPlayer {
+// // private:
+// //     int runs;
+// //     int centuries;
+
+// // public:
+// //     // Constructor
+// //     Batsman(string n, int a, int m, int r, int c) : CricketPlayer(n, a, m) {
+// //         runs = r;
+// //         centuries = c;
+// //         cout << "Batsman constructor called for " << n << endl;
+// //     }
+
+// //     // Destructor
+// //     ~Batsman() {
+// //         cout << "Batsman destructor called for " << name << endl;
+// //     }
+
+// //     void displayBatsmanInfo() {
+// //         displayPlayerInfo();
+// //         cout << "Runs Scored: " << runs << endl;
+// //         cout << "Centuries: " << centuries << endl;
+// //     }
+// // };
+
+// // // Main function
+// // int main() {
+// //     cout << "Creating Bowler object...\n";
+// //     Bowler bowler("Shane Warne", 32, 145, 708);
+
+// //     cout << "\nCreating Batsman object...\n";
+// //     Batsman batsman("Sachin Tendulkar", 30, 200, 15921, 51);
+
+// //     cout << "\nBowler Information:" << endl;
+// //     bowler.displayBowlerInfo();
+
+// //     cout << "\nBatsman Information:" << endl;
+// //     batsman.displayBatsmanInfo();
+
+// //     cout << "\nEnd of main function, destructors will be called automatically.\n";
+// //     return 0;
+// // }
+// #include <iostream>
+// #include <string>
+// using namespace std;
+
+// // Base class (Abstract)
+// class CricketPlayer {
+// protected:
+//     string name;
+//     int age;
+//     int matchesPlayed;
+
+// public:
+//     // Constructor
+//     CricketPlayer(string n, int a, int m) {
+//         name = n;
+//         age = a;
+//         matchesPlayed = m;
+//         cout << "CricketPlayer constructor called for " << name << endl;
+//     }
+
+//     // Virtual destructor
+//     virtual ~CricketPlayer() {
+//         cout << "CricketPlayer destructor called for " << name << endl;
+//     }
+
+//     // Pure virtual function → must be overridden
+//     virtual void show() const = 0;
+
+//     // Static binding example (non-virtual function)
+//     void showName() const {
+//         cout << "Player Name (Static Binding): " << name << endl;
+//     }
+
+//     // Operator overloading (compare matches played)
+//     bool operator>(const CricketPlayer& other) const {
+//         return this->matchesPlayed > other.matchesPlayed;
+//     }
+
+//     string getName() const { return name; } // helper for printing
+// };
+
+// // Derived class for Bowler
+// class Bowler : public CricketPlayer {
+// private:
+//     int wickets;
+
+// public:
+//     Bowler(string n, int a, int m, int w) : CricketPlayer(n, a, m), wickets(w) {
+//         cout << "Bowler constructor called for " << n << endl;
+//     }
+
+//     ~Bowler() {
+//         cout << "Bowler destructor called for " << name << endl;
+//     }
+
+//     // Override pure virtual function → runtime binding
+//     void show() const override {
+//         cout << "Bowler Information:" << endl;
+//         cout << "Name: " << name << endl;
+//         cout << "Age: " << age << endl;
+//         cout << "Matches Played: " << matchesPlayed << endl;
+//         cout << "Wickets Taken: " << wickets << endl;
+//     }
+// };
+
+// // Derived class for Batsman
+// class Batsman : public CricketPlayer {
+// private:
+//     int runs;
+//     int centuries;
+
+// public:
+//     Batsman(string n, int a, int m, int r, int c) : CricketPlayer(n, a, m), runs(r), centuries(c) {
+//         cout << "Batsman constructor called for " << n << endl;
+//     }
+
+//     ~Batsman() {
+//         cout << "Batsman destructor called for " << name << endl;
+//     }
+
+//     // Override pure virtual function → runtime binding
+//     void show() const  {
+//         cout << "Batsman Information:" << endl;
+//         cout << "Name: " << name << endl;
+//         cout << "Age: " << age << endl;
+//         cout << "Matches Played: " << matchesPlayed << endl;
+//         cout << "Runs Scored: " << runs << endl;
+//         cout << "Centuries: " << centuries << endl;
+//     }
+// };
+
+// // Main function
+// int main() {
+//     cout << "Creating Bowler object...\n";
+//     CricketPlayer* bowler = new Bowler("Shane Warne", 32, 145, 708);
+
+//     cout << "\nCreating Batsman object...\n";
+//     CricketPlayer* batsman = new Batsman("Sachin Tendulkar", 30, 200, 15921, 51);
+
+//     cout << "\n--- Runtime Binding (Virtual Function) ---" << endl;
+//     bowler->show();   // Calls Bowler's version
+//     batsman->show();  // Calls Batsman's version
+
+//     cout << "\n--- Static Binding (Non-Virtual Function) ---" << endl;
+//     bowler->showName();      // Resolved at compile time
+//     batsman->showName();
+
+//     cout << "\n--- Operator Overloading ---" << endl;
+//     if (*batsman > *bowler)
+//         cout << batsman->getName() << " has played more matches than " << bowler->getName() << endl;
+//     else
+//         cout << bowler->getName() << " has played more matches than " << batsman->getName() << endl;
+
+//     cout << "\nEnd of main function, destructors will be called automatically.\n";
+
+//     delete bowler;
+
+ //    delete batsman;
+
+//     return 0;
+// }
