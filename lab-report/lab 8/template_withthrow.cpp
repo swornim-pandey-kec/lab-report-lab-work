@@ -39,7 +39,7 @@ int main() {
             int value;
             cin >> value;
             arr.push(value);
-            cout << "PushedS: " << arr.push(1) << endl;
+            cout << "Popped: " << arr.pop() << endl;
         }
          cout << "Popped: " << arr.pop() << endl;
     }
