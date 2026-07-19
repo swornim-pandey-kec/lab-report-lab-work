@@ -2,6 +2,7 @@
 #include <string>
 using namespace std;
 struct student{
+    //swornim pandey
     public:
     string name;
     int age;    
